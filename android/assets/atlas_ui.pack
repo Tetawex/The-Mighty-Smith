@@ -1,0 +1,72 @@
+
+atlas_ui.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ui_sword
+  rotate: false
+  xy: 1, 13
+  size: 320, 50
+  orig: 320, 50
+  offset: 0, 0
+  index: -1
+ui_anvil
+  rotate: false
+  xy: 323, 7
+  size: 240, 56
+  orig: 240, 56
+  offset: 0, 0
+  index: -1
+ui_button_default
+  rotate: false
+  xy: 565, 46
+  size: 17, 17
+  split: 8, 8, 8, 8
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+ui_button_pressed
+  rotate: false
+  xy: 565, 27
+  size: 17, 17
+  split: 8, 8, 8, 8
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+ui_button_pause_default
+  rotate: false
+  xy: 584, 47
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+ui_button_pause_pressed
+  rotate: false
+  xy: 565, 9
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+ui_coin
+  rotate: false
+  xy: 1, 2
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+ui_hpar_frame
+  rotate: false
+  xy: 584, 37
+  size: 8, 8
+  split: 6, 1, 0, 0
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+ui_hpbar_fill
+  rotate: false
+  xy: 565, 1
+  size: 7, 6
+  split: 5, 1, 0, 0
+  orig: 7, 6
+  offset: 0, 0
+  index: -1

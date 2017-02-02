@@ -1,0 +1,319 @@
+
+atlas.png
+size: 1024,64
+format: RGBA8888
+filter: MipMapLinearNearest,Nearest
+repeat: none
+skeleton_basic_attack1
+  rotate: false
+  xy: 348, 14
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: 1
+skeleton_basic_attack1
+  rotate: false
+  xy: 382, 14
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: 2
+skeleton_basic_attack1
+  rotate: false
+  xy: 416, 14
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: 3
+skeleton_basic_attack1
+  rotate: false
+  xy: 450, 14
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: 4
+skeleton_basic_attack1
+  rotate: false
+  xy: 484, 14
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: 5
+skeleton_basic_attack1
+  rotate: false
+  xy: 518, 14
+  size: 32, 48
+  orig: 32, 48
+  offset: 0, 0
+  index: 6
+skeleton_basic_attack2
+  rotate: false
+  xy: 114, 14
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: 1
+skeleton_basic_attack2
+  rotate: false
+  xy: 153, 14
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: 2
+skeleton_basic_attack2
+  rotate: false
+  xy: 192, 14
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: 3
+skeleton_basic_attack2
+  rotate: false
+  xy: 231, 14
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: 4
+skeleton_basic_attack2
+  rotate: false
+  xy: 270, 14
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: 5
+skeleton_basic_attack2
+  rotate: false
+  xy: 309, 14
+  size: 37, 48
+  orig: 37, 48
+  offset: 0, 0
+  index: 6
+skeleton_basic_walk
+  rotate: false
+  xy: 552, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 1
+skeleton_basic_walk
+  rotate: false
+  xy: 586, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 2
+skeleton_basic_walk
+  rotate: false
+  xy: 620, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 3
+skeleton_basic_walk
+  rotate: false
+  xy: 654, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 4
+skeleton_basic_walk
+  rotate: false
+  xy: 688, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 5
+skeleton_basic_walk
+  rotate: false
+  xy: 722, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 6
+skeleton_basic_walk
+  rotate: false
+  xy: 756, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 7
+skeleton_basic_walk
+  rotate: false
+  xy: 790, 30
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: 8
+tile_bricks
+  rotate: false
+  xy: 824, 38
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: 1
+tile_bricks
+  rotate: false
+  xy: 850, 38
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: 2
+tile_bricks
+  rotate: false
+  xy: 876, 38
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: 3
+tile_bricks
+  rotate: false
+  xy: 902, 38
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: 4
+tile_bricks
+  rotate: false
+  xy: 928, 38
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: 5
+tile_bricks
+  rotate: false
+  xy: 954, 38
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: 6
+tile_bricks
+  rotate: false
+  xy: 980, 38
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: 7
+tile_pads
+  rotate: false
+  xy: 552, 4
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+tile_rocks
+  rotate: false
+  xy: 578, 4
+  size: 24, 24
+  orig: 24, 24
+  offset: 0, 0
+  index: -1
+ui_anvil
+  rotate: false
+  xy: 604, 9
+  size: 19, 19
+  split: 9, 9, 9, 9
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+ui_button_default
+  rotate: false
+  xy: 625, 11
+  size: 17, 17
+  split: 8, 8, 8, 8
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+ui_button_pause_default
+  rotate: false
+  xy: 1006, 46
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+ui_button_pause_pressed
+  rotate: false
+  xy: 1006, 28
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+ui_button_pressed
+  rotate: false
+  xy: 644, 11
+  size: 17, 17
+  split: 8, 8, 8, 8
+  orig: 17, 17
+  offset: 0, 0
+  index: -1
+ui_coin
+  rotate: false
+  xy: 663, 19
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+ui_hpar_frame
+  rotate: false
+  xy: 2, 2
+  size: 8, 8
+  split: 6, 1, 0, 0
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+ui_hpbar_fill
+  rotate: false
+  xy: 824, 30
+  size: 7, 6
+  split: 5, 1, 0, 0
+  orig: 7, 6
+  offset: 0, 0
+  index: -1
+ui_pad_blue
+  rotate: false
+  xy: 604, 4
+  size: 3, 3
+  split: 1, 1, 1, 1
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+ui_pad_green
+  rotate: false
+  xy: 12, 7
+  size: 3, 3
+  split: 1, 1, 1, 1
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+ui_pad_purple
+  rotate: false
+  xy: 12, 2
+  size: 3, 3
+  split: 1, 1, 1, 1
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+ui_pad_red
+  rotate: false
+  xy: 663, 14
+  size: 3, 3
+  split: 1, 1, 1, 1
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+ui_pad_yellow
+  rotate: false
+  xy: 674, 25
+  size: 3, 3
+  split: 1, 1, 1, 1
+  orig: 3, 3
+  offset: 0, 0
+  index: -1
+ui_sword
+  rotate: false
+  xy: 2, 12
+  size: 110, 50
+  split: 53, 56, 0, 50
+  pad: 53, 56, -1, -1
+  orig: 110, 50
+  offset: 0, 0
+  index: -1
