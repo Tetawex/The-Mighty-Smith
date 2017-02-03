@@ -29,10 +29,10 @@ public class TransformComponent implements Component {
         return position;
     }
     public Vector2 getCenterPosition() {
-        return position.mulAdd(dimension,0.5f);
+        return new Vector2(position).mulAdd(dimension,0.5f);
     }
     public void setCenterPosition(Vector2 centerPosition) {
-        setPosition(getPosition().mulAdd(centerPosition,-0.5f));
+        setPosition(new Vector2(centerPosition).mulAdd(dimension,-0.5f));
     }
     public void setPosition(Vector2 position) {
         this.position = position;

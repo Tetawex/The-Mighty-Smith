@@ -1,16 +1,14 @@
 package org.tetawex.tms.ui.actors;
 
 import com.badlogic.ashley.core.Engine;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Widget;
 import org.tetawex.tms.core.TMSGame;
 import org.tetawex.tms.ecs.misc.stats.RawStats;
 import org.tetawex.tms.ecs.misc.stats.Stats;
 import org.tetawex.tms.ecs.systems.*;
-import org.tetawex.tms.ecs.templates.Bundle;
+import org.tetawex.tms.util.Bundle;
 
 /**
  * Created by Tetawex on 26.01.2017.
@@ -34,19 +32,23 @@ public class GameWorld extends Widget {
         engine.addSystem(new AnimationSystem());
 
         //TODO:remove testing code
+
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j <500; j++) {
+            for (int j = 0; j <200; j++) {
                 Bundle bundle=new Bundle();
-                bundle.putItem("position",new Vector2(72+j*40,12+i*24));
-                bundle.putItem("stats",new Stats(20,new RawStats(1,2,2,1)));
+                bundle.putItem("position",new Vector2(300+j*20,12+i*24));
+                bundle.putItem("stats",new Stats(30,new RawStats(1,2,2,1)));
                 engine.addEntity(game.getTemplateManager().getTemplate("skeleton_basic").createEntity(engine,bundle));
             }
         }
-        /*Bundle bundle=new Bundle();
-        bundle.putItem("position",new Vector2(0,0));
-        bundle.putItem("stats",new Stats(20,new RawStats()));
-        engine.addEntity(game.getTemplateManager().getTemplate("skeleton_basic").createEntity(engine,bundle));*/
-
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j <6; j++) {
+                Bundle bundle=new Bundle();
+                bundle.putItem("position",new Vector2(60+j*24,12+i*24));
+                bundle.putItem("stats",new Stats(400,new RawStats(3,7,5,5)));
+                engine.addEntity(game.getTemplateManager().getTemplate("weapon_sword").createEntity(engine,bundle));
+            }
+        }
         Bundle bundle=new Bundle();
         bundle.putItem("position",new Vector2(-24,-96));
         engine.addEntity(game.getTemplateManager().getTemplate("wall").createEntity(engine,bundle));

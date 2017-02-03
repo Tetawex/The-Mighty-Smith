@@ -13,7 +13,6 @@ public class AttackMessageListener extends MessageListener {
         StatsComponent attackerStats= Mappers.stats.get(message.getSender());
         StatsComponent defenderStats=Mappers.stats.get(message.getReceiver());
 
-        defenderStats.getStats().setMaxHealth(defenderStats.getStats()
-                .getMaxHealth()-attackerStats.getStats().getAttackDamage());
+        defenderStats.getStats().receiveDamage(attackerStats.getStats().getAttackDamage());
     }
 }

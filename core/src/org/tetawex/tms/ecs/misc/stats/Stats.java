@@ -1,5 +1,7 @@
 package org.tetawex.tms.ecs.misc.stats;
 
+import com.badlogic.gdx.Gdx;
+
 /**
  * Created by Tetawex on 21.01.2017.
  */
@@ -30,7 +32,10 @@ public class Stats
         elapsedTimeSinceAttack=0;
     }
     public boolean canAttack(){
-        return elapsedTimeSinceAttack>getAttackInterval();
+        return elapsedTimeSinceAttack>=getAttackInterval();
+    }
+    public void receiveDamage(float damage){
+        currentHealth-=damage;
     }
     public float getPowerLevel() {
         return powerLevel;
@@ -99,7 +104,14 @@ public class Stats
     {
         this.powerLevel=powerLevel;
         this.rawStats=rawStats;
+
+        maxHealth=powerLevel*rawStats.getEndurancePercentage();
         currentHealth=maxHealth;
+
+        attackSpeed=0.07f*rawStats.getAgilityPercentage();
+        attackRange=8+32*rawStats.getPerceptionPercentage();
+        attackDamage=powerLevel*0.25f*rawStats.getStrengthPercentage();
+        movementSpeed=0.2f+0.3f*rawStats.getAgilityPercentage();
     }
     public void tick(float deltaTime){
         if(!canAttack())

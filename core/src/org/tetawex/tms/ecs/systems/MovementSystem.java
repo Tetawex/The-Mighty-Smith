@@ -8,23 +8,21 @@ import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.ashley.utils.ImmutableArray;
 import org.tetawex.tms.ecs.components.TransformComponent;
 import org.tetawex.tms.ecs.components.VelocityComponent;
+import org.tetawex.tms.util.Mappers;
 
 /**
  * Created by tetawex on 27.01.17.
  */
 public class MovementSystem extends IteratingSystem {
-    private ComponentMapper<TransformComponent> tm = ComponentMapper.getFor(TransformComponent.class);
-    private ComponentMapper<VelocityComponent> vm = ComponentMapper.getFor(VelocityComponent.class);
 
     public MovementSystem() {
         super(Family.all(TransformComponent.class, VelocityComponent.class).get());
     }
 
     public void processEntity(Entity entity, float deltaTime) {
-        TransformComponent transformComponent = tm.get(entity);
-        VelocityComponent velocityComponent = vm.get(entity);
+        TransformComponent transformComponent = Mappers.transform.get(entity);
+        VelocityComponent velocityComponent = Mappers.velocity.get(entity);
 
-        transformComponent.setPosition(transformComponent
-                .getPosition().mulAdd(velocityComponent.getVelocity(),deltaTime));
+        transformComponent.getPosition().mulAdd(velocityComponent.getVelocity(),deltaTime);
     }
 }

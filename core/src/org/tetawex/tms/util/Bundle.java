@@ -1,4 +1,4 @@
-package org.tetawex.tms.ecs.templates;
+package org.tetawex.tms.util;
 
 import java.util.HashMap;
 import java.util.Map;

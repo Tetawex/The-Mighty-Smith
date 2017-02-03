@@ -2,7 +2,6 @@ package org.tetawex.tms.ecs.templates;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.ashley.core.Entity;
-import com.badlogic.gdx.Game;
 import org.tetawex.tms.core.TMSGame;
 
 /**
@@ -21,5 +20,5 @@ public abstract class Template {
     public Template(TMSGame game){
         this.game=game;
     }
-    public abstract Entity createEntity(Engine engine, Bundle bundle);
+    public abstract Entity createEntity(Engine engine, org.tetawex.tms.util.Bundle bundle);
 }

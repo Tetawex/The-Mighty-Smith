@@ -1,215 +1,292 @@
 
 atlas.png
-size: 1024,64
+size: 1024,128
 format: RGBA8888
-filter: MipMapLinearNearest,Nearest
+filter: Nearest,Nearest
 repeat: none
 skeleton_basic_attack1
   rotate: false
-  xy: 348, 14
+  xy: 698, 75
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 1
 skeleton_basic_attack1
   rotate: false
-  xy: 382, 14
+  xy: 732, 75
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 2
 skeleton_basic_attack1
   rotate: false
-  xy: 416, 14
+  xy: 766, 75
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 3
 skeleton_basic_attack1
   rotate: false
-  xy: 450, 14
+  xy: 800, 75
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 4
 skeleton_basic_attack1
   rotate: false
-  xy: 484, 14
+  xy: 834, 75
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 5
 skeleton_basic_attack1
   rotate: false
-  xy: 518, 14
+  xy: 868, 75
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 6
 skeleton_basic_attack2
   rotate: false
-  xy: 114, 14
+  xy: 464, 75
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 1
 skeleton_basic_attack2
   rotate: false
-  xy: 153, 14
+  xy: 503, 75
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 2
 skeleton_basic_attack2
   rotate: false
-  xy: 192, 14
+  xy: 542, 75
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 3
 skeleton_basic_attack2
   rotate: false
-  xy: 231, 14
+  xy: 581, 75
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 4
 skeleton_basic_attack2
   rotate: false
-  xy: 270, 14
+  xy: 620, 75
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 5
 skeleton_basic_attack2
   rotate: false
-  xy: 309, 14
+  xy: 659, 75
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 6
 skeleton_basic_walk
   rotate: false
-  xy: 552, 30
+  xy: 902, 91
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 1
 skeleton_basic_walk
   rotate: false
-  xy: 586, 30
+  xy: 936, 91
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
 skeleton_basic_walk
   rotate: false
-  xy: 620, 30
+  xy: 970, 91
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 3
 skeleton_basic_walk
   rotate: false
-  xy: 654, 30
+  xy: 902, 57
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 4
 skeleton_basic_walk
   rotate: false
-  xy: 688, 30
+  xy: 936, 57
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 5
 skeleton_basic_walk
   rotate: false
-  xy: 722, 30
+  xy: 970, 57
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 6
 skeleton_basic_walk
   rotate: false
-  xy: 756, 30
+  xy: 102, 39
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 7
 skeleton_basic_walk
   rotate: false
-  xy: 790, 30
+  xy: 136, 41
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 8
+sword_attack
+  rotate: false
+  xy: 2, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 1
+sword_idle
+  rotate: false
+  xy: 2, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 3
+sword_idle
+  rotate: false
+  xy: 2, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 1
+sword_attack
+  rotate: false
+  xy: 114, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 2
+sword_attack
+  rotate: false
+  xy: 52, 23
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 3
+sword_attack
+  rotate: false
+  xy: 164, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 4
+sword_attack
+  rotate: false
+  xy: 214, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 5
+sword_attack
+  rotate: false
+  xy: 264, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 6
+sword_attack
+  rotate: false
+  xy: 314, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 7
+sword_idle
+  rotate: false
+  xy: 364, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 2
+sword_idle
+  rotate: false
+  xy: 414, 75
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 4
 tile_bricks
   rotate: false
-  xy: 824, 38
+  xy: 170, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 1
 tile_bricks
   rotate: false
-  xy: 850, 38
+  xy: 196, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 2
 tile_bricks
   rotate: false
-  xy: 876, 38
+  xy: 222, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 3
 tile_bricks
   rotate: false
-  xy: 902, 38
+  xy: 248, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 4
 tile_bricks
   rotate: false
-  xy: 928, 38
+  xy: 274, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 5
 tile_bricks
   rotate: false
-  xy: 954, 38
+  xy: 300, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 6
 tile_bricks
   rotate: false
-  xy: 980, 38
+  xy: 326, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 7
 tile_pads
   rotate: false
-  xy: 552, 4
+  xy: 352, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
 tile_rocks
   rotate: false
-  xy: 578, 4
+  xy: 378, 49
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
 ui_anvil
   rotate: false
-  xy: 604, 9
+  xy: 2, 2
   size: 19, 19
   split: 9, 9, 9, 9
   orig: 19, 19
@@ -217,7 +294,7 @@ ui_anvil
   index: -1
 ui_button_default
   rotate: false
-  xy: 625, 11
+  xy: 1004, 106
   size: 17, 17
   split: 8, 8, 8, 8
   orig: 17, 17
@@ -225,21 +302,21 @@ ui_button_default
   index: -1
 ui_button_pause_default
   rotate: false
-  xy: 1006, 46
+  xy: 23, 5
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 ui_button_pause_pressed
   rotate: false
-  xy: 1006, 28
+  xy: 1004, 88
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 ui_button_pressed
   rotate: false
-  xy: 644, 11
+  xy: 404, 56
   size: 17, 17
   split: 8, 8, 8, 8
   orig: 17, 17
@@ -247,14 +324,14 @@ ui_button_pressed
   index: -1
 ui_coin
   rotate: false
-  xy: 663, 19
+  xy: 102, 28
   size: 9, 9
   orig: 9, 9
   offset: 0, 0
   index: -1
 ui_hpar_frame
   rotate: false
-  xy: 2, 2
+  xy: 423, 65
   size: 8, 8
   split: 6, 1, 0, 0
   orig: 8, 8
@@ -262,7 +339,7 @@ ui_hpar_frame
   index: -1
 ui_hpbar_fill
   rotate: false
-  xy: 824, 30
+  xy: 170, 41
   size: 7, 6
   split: 5, 1, 0, 0
   orig: 7, 6
@@ -270,7 +347,7 @@ ui_hpbar_fill
   index: -1
 ui_pad_blue
   rotate: false
-  xy: 604, 4
+  xy: 404, 51
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -278,7 +355,7 @@ ui_pad_blue
   index: -1
 ui_pad_green
   rotate: false
-  xy: 12, 7
+  xy: 41, 18
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -286,7 +363,7 @@ ui_pad_green
   index: -1
 ui_pad_purple
   rotate: false
-  xy: 12, 2
+  xy: 1004, 83
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -294,7 +371,7 @@ ui_pad_purple
   index: -1
 ui_pad_red
   rotate: false
-  xy: 663, 14
+  xy: 102, 23
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -302,7 +379,7 @@ ui_pad_red
   index: -1
 ui_pad_yellow
   rotate: false
-  xy: 674, 25
+  xy: 113, 34
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -310,7 +387,7 @@ ui_pad_yellow
   index: -1
 ui_sword
   rotate: false
-  xy: 2, 12
+  xy: 2, 73
   size: 110, 50
   split: 53, 56, 0, 50
   pad: 53, 56, -1, -1

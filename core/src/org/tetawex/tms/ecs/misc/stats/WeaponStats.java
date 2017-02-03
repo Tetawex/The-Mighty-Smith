@@ -11,14 +11,14 @@ public class WeaponStats extends Stats{
 
     public WeaponStats(float powerLevel, RawStats rawStats) {
         super(powerLevel, rawStats);
-        if(rawStats.getDurabilityPercentage()>70)
+        if(rawStats.getEndurancePercentage()>70)
             if(rawStats.getAgilityPercentage()>=rawStats.getStrengthPercentage())
             {
                 setName(WeaponNameGenerator.generateName("Shield"));
                 setAttackDamage(0.5f*getRawStats().getStrengthPercentage()*powerLevel);
                 setAttackRange(0.5f*DEFAULT_RANGE);
                 setAttackSpeed(0.5f*getRawStats().getAgilityPercentage()*DEFAULT_ATTACK_SPEED);
-                setMaxHealth(3f*getRawStats().getDurabilityPercentage()*getPowerLevel());
+                setMaxHealth(3f*getRawStats().getEndurancePercentage()*getPowerLevel());
             }
             else
             {
@@ -26,7 +26,7 @@ public class WeaponStats extends Stats{
                 setAttackDamage(1f*getRawStats().getStrengthPercentage()*powerLevel);
                 setAttackRange(0.3f*DEFAULT_RANGE);
                 setAttackSpeed(0.2f*getRawStats().getAgilityPercentage()*DEFAULT_ATTACK_SPEED);
-                setMaxHealth(4f*getRawStats().getDurabilityPercentage()*getPowerLevel());
+                setMaxHealth(4f*getRawStats().getEndurancePercentage()*getPowerLevel());
             }
         else
         {
@@ -34,7 +34,7 @@ public class WeaponStats extends Stats{
             setAttackDamage(getRawStats().getStrengthPercentage()*powerLevel);
             setAttackRange(DEFAULT_RANGE);
             setAttackSpeed(getRawStats().getAgilityPercentage()*DEFAULT_ATTACK_SPEED);
-            setMaxHealth(getRawStats().getDurabilityPercentage()*getPowerLevel());
+            setMaxHealth(getRawStats().getEndurancePercentage()*getPowerLevel());
         }
     }
 }

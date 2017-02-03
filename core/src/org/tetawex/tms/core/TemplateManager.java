@@ -3,6 +3,7 @@ package org.tetawex.tms.core;
 import org.tetawex.tms.ecs.templates.SkeletonTemplate;
 import org.tetawex.tms.ecs.templates.Template;
 import org.tetawex.tms.ecs.templates.BackgroundTemplate;
+import org.tetawex.tms.ecs.templates.WeaponTemplate;
 
 import java.util.HashMap;
 
@@ -22,6 +23,7 @@ public class TemplateManager {
     }
     private void initTemplates(){
         templates.put("skeleton_basic",new SkeletonTemplate(game));
+        templates.put("weapon_sword",new WeaponTemplate(game));
         templates.put("wall",new BackgroundTemplate(game));
     }
 }

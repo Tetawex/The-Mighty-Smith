@@ -50,7 +50,7 @@ public class RawStats
         return perception/(getStatSum());
     }
 
-    public float getDurabilityPercentage() {
+    public float getEndurancePercentage() {
         return endurance /(getStatSum());
     }
 

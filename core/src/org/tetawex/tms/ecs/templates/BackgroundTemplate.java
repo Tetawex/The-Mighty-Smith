@@ -50,7 +50,7 @@ public class BackgroundTemplate extends Template {
     }
 
     @Override
-    public Entity createEntity(Engine engine, Bundle bundle) {
+    public Entity createEntity(Engine engine, org.tetawex.tms.util.Bundle bundle) {
         Entity entity=new Entity();
 
         entity.add(new TransformComponent(
