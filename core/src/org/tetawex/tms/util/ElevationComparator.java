@@ -29,9 +29,15 @@ public class ElevationComparator implements Comparator<Entity> {
         float y1=tm.get(o1).getPosition().y;
         float y2=tm.get(o2).getPosition().y;
         if(y1>y2)
-            return 1;
-        if(y1<y2)
             return -1;
+        if(y1<y2)
+            return 1;
+        float x1=tm.get(o1).getPosition().x;
+        float x2=tm.get(o2).getPosition().x;
+        if(x1>x2)
+            return -1;
+        if(x1<x2)
+            return 1;
         return 0;
     }
 }

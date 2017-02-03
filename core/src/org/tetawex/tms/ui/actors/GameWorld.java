@@ -1,4 +1,4 @@
-package org.tetawex.tms.actors;
+package org.tetawex.tms.ui.actors;
 
 import com.badlogic.ashley.core.Engine;
 import com.badlogic.gdx.Gdx;
@@ -34,13 +34,21 @@ public class GameWorld extends Widget {
         engine.addSystem(new AnimationSystem());
 
         //TODO:remove testing code
-        Bundle bundle=new Bundle();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j <500; j++) {
+                Bundle bundle=new Bundle();
+                bundle.putItem("position",new Vector2(72+j*40,12+i*24));
+                bundle.putItem("stats",new Stats(20,new RawStats(1,2,2,1)));
+                engine.addEntity(game.getTemplateManager().getTemplate("skeleton_basic").createEntity(engine,bundle));
+            }
+        }
+        /*Bundle bundle=new Bundle();
         bundle.putItem("position",new Vector2(0,0));
         bundle.putItem("stats",new Stats(20,new RawStats()));
-        engine.addEntity(game.getTemplateManager().getTemplate("skeleton_basic").createEntity(engine,bundle));
+        engine.addEntity(game.getTemplateManager().getTemplate("skeleton_basic").createEntity(engine,bundle));*/
 
-        bundle=new Bundle();
-        bundle.putItem("position",new Vector2(-40,80));
+        Bundle bundle=new Bundle();
+        bundle.putItem("position",new Vector2(-24,-96));
         engine.addEntity(game.getTemplateManager().getTemplate("wall").createEntity(engine,bundle));
         engine.getEntities();
     }

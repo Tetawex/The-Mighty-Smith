@@ -1,4 +1,4 @@
-package org.tetawex.tms.actors;
+package org.tetawex.tms.ui.actors;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
@@ -28,8 +28,9 @@ public class AnvilWithSword extends Widget {
     }
     @Override
     public void draw(Batch batch, float parentAlpha) {
-        anvilDrawable.draw(batch, getX() + (getWidth() - getWidth() / 1.6f) / 2, getY(), getWidth() / 1.6f, getHeight());
-        swordDrawable.draw(batch, getX(), getY(), getWidth(), getHeight());
+        //anvilDrawable.draw(batch, getX() + (getWidth() - getWidth() / 1.6f) / 2, getY(), getWidth() / 1.6f, getHeight());
+        anvilDrawable.draw(batch, getX(), getY(), getPrefWidth(), getPrefHeight());
+        swordDrawable.draw(batch, getX(), getY(), getPrefWidth(), getPrefHeight());
     }
     @Override
     public void act(float delta) {

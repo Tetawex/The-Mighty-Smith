@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.NinePatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -15,13 +14,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import org.tetawex.tms.actors.AnvilWithSword;
-import org.tetawex.tms.actors.GameWorld;
-import org.tetawex.tms.actors.SkeletonActorDemo;
+import org.tetawex.tms.ui.actors.AnvilWithSword;
+import org.tetawex.tms.ui.actors.GameWorld;
 import org.tetawex.tms.core.TMSGame;
-import org.tetawex.tms.ecs.misc.stats.Stats;
-
-import java.util.Random;
 
 /**
  * Created by Tetawex on 08.01.2017.
@@ -116,12 +111,13 @@ public class GameScreen implements Screen
         midRowTable.add(gameWorldActor).expand();
         midRowTable.toBack();
 
-        mainTable.setDebug(true);
+        //debug
+        /*mainTable.setDebug(true);
         topRowTable.setDebug(true);
         topRowLeftTable.setDebug(true);
         topRowRightTable.setDebug(true);
         midRowTable.setDebug(true);
-        bottomRowTable.setDebug(true);
+        bottomRowTable.setDebug(true);*/
     }
     @Override
     public void show() {

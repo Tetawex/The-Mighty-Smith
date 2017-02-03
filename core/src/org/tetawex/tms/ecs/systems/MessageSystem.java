@@ -36,7 +36,7 @@ public class MessageSystem extends EntitySystem {
     public void update(float deltaTime){
         if(!messages.isEmpty()){
             Message message=messages.remove();
-            listenerMap.get(message.getClass()).process(message);
+            listenerMap.get(message.getClass()).tick(message,deltaTime);
         }
     }
 }

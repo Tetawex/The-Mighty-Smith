@@ -7,7 +7,7 @@ import com.badlogic.ashley.core.Entity;
  * Created by tetawex on 31.01.17.
  */
 public class AttackMessage extends Message {
-    public AttackMessage(Entity sender, Entity receiver) {
-        super(sender, receiver);
+    public AttackMessage(Entity sender, Entity receiver,float delay) {
+        super(sender, receiver,delay);
     }
 }

@@ -1,9 +1,8 @@
 package org.tetawex.tms.core;
 
-import org.tetawex.tms.core.TMSGame;
 import org.tetawex.tms.ecs.templates.SkeletonTemplate;
 import org.tetawex.tms.ecs.templates.Template;
-import org.tetawex.tms.ecs.templates.WallTemplate;
+import org.tetawex.tms.ecs.templates.BackgroundTemplate;
 
 import java.util.HashMap;
 
@@ -23,6 +22,6 @@ public class TemplateManager {
     }
     private void initTemplates(){
         templates.put("skeleton_basic",new SkeletonTemplate(game));
-        templates.put("wall",new WallTemplate(game));
+        templates.put("wall",new BackgroundTemplate(game));
     }
 }

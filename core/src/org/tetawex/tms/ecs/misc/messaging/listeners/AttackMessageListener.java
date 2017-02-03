@@ -7,7 +7,7 @@ import org.tetawex.tms.util.Mappers;
 /**
  * Created by tetawex on 31.01.17.
  */
-public class AttackMessageListener implements MessageListener {
+public class AttackMessageListener extends MessageListener {
     @Override
     public void process(Message message) {
         StatsComponent attackerStats= Mappers.stats.get(message.getSender());

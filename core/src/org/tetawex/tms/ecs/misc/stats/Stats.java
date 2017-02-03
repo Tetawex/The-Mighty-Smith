@@ -6,6 +6,11 @@ package org.tetawex.tms.ecs.misc.stats;
 public class Stats
 {
     private float powerLevel;
+
+    public float getCurrentHealth() {
+        return currentHealth;
+    }
+
     private float currentHealth;
     private float maxHealth;
     private float attackSpeed;
@@ -21,7 +26,9 @@ public class Stats
     }
 
     private float movementSpeed;
-
+    public void attack(){
+        elapsedTimeSinceAttack=0;
+    }
     public boolean canAttack(){
         return elapsedTimeSinceAttack>getAttackInterval();
     }

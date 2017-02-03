@@ -29,12 +29,12 @@ public class RawStats
         this.perception = perception;
     }
 
-    public float getDurability() {
-        return durability;
+    public float getEndurance() {
+        return endurance;
     }
 
-    public void setDurability(float durability) {
-        this.durability = durability;
+    public void setEndurance(float endurance) {
+        this.endurance = endurance;
     }
 
 
@@ -51,16 +51,23 @@ public class RawStats
     }
 
     public float getDurabilityPercentage() {
-        return durability/(getStatSum());
+        return endurance /(getStatSum());
     }
 
     public float getStatSum()
     {
-        return perception+durability+strength+agility;
+        return perception+ endurance +strength+agility;
     }
 
-    private float perception;
-    private float durability;
+    public RawStats(float strength, float agility, float endurance, float perception) {
+        this.strength = strength;
+        this.agility = agility;
+        this.endurance = endurance;
+        this.perception = perception;
+    }
+
     private float strength;
     private float agility;
+    private float endurance;
+    private float perception;
 }

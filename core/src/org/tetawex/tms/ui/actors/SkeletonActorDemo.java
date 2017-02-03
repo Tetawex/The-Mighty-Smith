@@ -1,4 +1,4 @@
-package org.tetawex.tms.actors;
+package org.tetawex.tms.ui.actors;
 
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
