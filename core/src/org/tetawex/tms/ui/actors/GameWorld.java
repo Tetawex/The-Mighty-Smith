@@ -27,25 +27,26 @@ public class GameWorld extends Widget {
         renderSystem=new RenderSystem();
         engine.addSystem(renderSystem);
         engine.addSystem(new AISystem());
-        engine.addSystem(new MessageSystem());
-        engine.addSystem(new StatsSystem());
+        engine.addSystem(new MessageSystem(game));
+        engine.addSystem(new StatsSystem(game));
         engine.addSystem(new AnimationSystem());
+        engine.addSystem(new DelayedRemovalSystem());
 
         //TODO:remove testing code
 
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j <200; j++) {
+            for (int j = 0; j <10; j++) {
                 Bundle bundle=new Bundle();
-                bundle.putItem("position",new Vector2(300+j*20,12+i*24));
-                bundle.putItem("stats",new Stats(30,new RawStats(1,2,2,1)));
+                bundle.putItem("position",new Vector2(300+j*128,12+i*24));
+                bundle.putItem("stats",new Stats(20,new RawStats(2,3,2,1)));
                 engine.addEntity(game.getTemplateManager().getTemplate("skeleton_basic").createEntity(engine,bundle));
             }
         }
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j <6; j++) {
+            for (int j = 0; j <8; j++) {
                 Bundle bundle=new Bundle();
-                bundle.putItem("position",new Vector2(60+j*24,12+i*24));
-                bundle.putItem("stats",new Stats(400,new RawStats(3,7,5,5)));
+                bundle.putItem("position",new Vector2(68+j*24,12+i*24));
+                bundle.putItem("stats",new Stats(25,new RawStats(3,4,2,2)));
                 engine.addEntity(game.getTemplateManager().getTemplate("weapon_sword").createEntity(engine,bundle));
             }
         }

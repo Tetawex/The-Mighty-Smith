@@ -100,7 +100,7 @@ public class Stats
     private float attackRange;
     private String name;
     private RawStats rawStats;
-    public Stats(float powerLevel,RawStats rawStats)
+    public Stats(float powerLevel,RawStats rawStats,String name)
     {
         this.powerLevel=powerLevel;
         this.rawStats=rawStats;
@@ -112,6 +112,10 @@ public class Stats
         attackRange=8+32*rawStats.getPerceptionPercentage();
         attackDamage=powerLevel*0.25f*rawStats.getStrengthPercentage();
         movementSpeed=0.2f+0.3f*rawStats.getAgilityPercentage();
+    }
+    public Stats(float powerLevel,RawStats rawStats)
+    {
+        this(powerLevel,rawStats,"");
     }
     public void tick(float deltaTime){
         if(!canAttack())

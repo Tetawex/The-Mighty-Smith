@@ -28,6 +28,7 @@ public class WeaponTemplate extends Template {
         entity.add(new VelocityComponent(Vector2.Zero));
 
         StatsComponent statsComponent=new StatsComponent(bundle.getItem("stats", Stats.class));
+        statsComponent.getStats().setName("weapon_sword");
 
         HashMap<String,Animation<TextureRegion>> animationHashMap=new HashMap<String, Animation<TextureRegion>>();
         animationHashMap.put("attack",getGame().getAnimationManager().getAnimation("sword_attack"));

@@ -5,10 +5,13 @@ import com.badlogic.ashley.core.EntitySystem;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IteratingSystem;
 import com.badlogic.gdx.Gdx;
+import org.tetawex.tms.core.TMSGame;
 import org.tetawex.tms.ecs.components.MessageComponent;
 import org.tetawex.tms.ecs.misc.messaging.listeners.AttackMessageListener;
+import org.tetawex.tms.ecs.misc.messaging.listeners.DeathMessageListener;
 import org.tetawex.tms.ecs.misc.messaging.listeners.MessageListener;
 import org.tetawex.tms.ecs.misc.messaging.messages.AttackMessage;
+import org.tetawex.tms.ecs.misc.messaging.messages.DeathMessage;
 import org.tetawex.tms.ecs.misc.messaging.messages.Message;
 
 import java.util.HashMap;
@@ -22,13 +25,16 @@ import java.util.Queue;
 public class MessageSystem extends EntitySystem {
     private Map<Class,MessageListener> listenerMap;
     private Queue<Message> messages;
-    public MessageSystem() {
+    private TMSGame game;
+    public MessageSystem(TMSGame game) {
         messages=new LinkedList<Message>();
         listenerMap=new HashMap<Class, MessageListener>();
+        this.game=game;
         initListenerMap();
     }
     private void initListenerMap(){
-        listenerMap.put(AttackMessage.class, new AttackMessageListener());
+        listenerMap.put(AttackMessage.class, new AttackMessageListener(game,getEngine()));
+        listenerMap.put(DeathMessage.class, new DeathMessageListener(game,getEngine()));
     }
     public void putMessage(Message message){
         messages.add(message);

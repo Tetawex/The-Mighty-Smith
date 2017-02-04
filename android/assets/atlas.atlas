@@ -6,287 +6,357 @@ filter: Nearest,Nearest
 repeat: none
 skeleton_basic_attack1
   rotate: false
-  xy: 698, 75
+  xy: 102, 26
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 1
 skeleton_basic_attack1
   rotate: false
-  xy: 732, 75
+  xy: 292, 28
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 2
 skeleton_basic_attack1
   rotate: false
-  xy: 766, 75
+  xy: 326, 28
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 3
 skeleton_basic_attack1
   rotate: false
-  xy: 800, 75
+  xy: 360, 28
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 4
 skeleton_basic_attack1
   rotate: false
-  xy: 834, 75
+  xy: 394, 28
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 5
 skeleton_basic_attack1
   rotate: false
-  xy: 868, 75
+  xy: 428, 28
   size: 32, 48
   orig: 32, 48
   offset: 0, 0
   index: 6
 skeleton_basic_attack2
   rotate: false
-  xy: 464, 75
+  xy: 914, 78
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 1
 skeleton_basic_attack2
   rotate: false
-  xy: 503, 75
+  xy: 953, 78
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 2
 skeleton_basic_attack2
   rotate: false
-  xy: 542, 75
+  xy: 136, 28
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 3
 skeleton_basic_attack2
   rotate: false
-  xy: 581, 75
+  xy: 175, 28
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 4
 skeleton_basic_attack2
   rotate: false
-  xy: 620, 75
+  xy: 214, 28
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 5
 skeleton_basic_attack2
   rotate: false
-  xy: 659, 75
+  xy: 253, 28
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: 6
+skeleton_basic_death
+  rotate: false
+  xy: 462, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 1
+skeleton_basic_death
+  rotate: false
+  xy: 512, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 2
+skeleton_basic_death
+  rotate: false
+  xy: 562, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 3
+skeleton_basic_death
+  rotate: false
+  xy: 612, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 4
+skeleton_basic_death
+  rotate: false
+  xy: 662, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 5
+skeleton_basic_death
+  rotate: false
+  xy: 712, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 6
+skeleton_basic_death
+  rotate: false
+  xy: 762, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 7
+skeleton_basic_death
+  rotate: false
+  xy: 812, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 8
+skeleton_basic_death
+  rotate: false
+  xy: 862, 44
+  size: 48, 32
+  orig: 48, 32
+  offset: 0, 0
+  index: 9
 skeleton_basic_walk
   rotate: false
-  xy: 902, 91
+  xy: 912, 44
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 1
 skeleton_basic_walk
   rotate: false
-  xy: 936, 91
+  xy: 946, 44
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 2
 skeleton_basic_walk
   rotate: false
-  xy: 970, 91
+  xy: 462, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 3
 skeleton_basic_walk
   rotate: false
-  xy: 902, 57
+  xy: 496, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 4
 skeleton_basic_walk
   rotate: false
-  xy: 936, 57
+  xy: 530, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 5
 skeleton_basic_walk
   rotate: false
-  xy: 970, 57
+  xy: 564, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 6
 skeleton_basic_walk
   rotate: false
-  xy: 102, 39
+  xy: 598, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 7
 skeleton_basic_walk
   rotate: false
-  xy: 136, 41
+  xy: 632, 10
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: 8
 sword_attack
   rotate: false
-  xy: 2, 23
+  xy: 2, 26
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 1
 sword_idle
   rotate: false
-  xy: 2, 23
+  xy: 2, 26
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 1
+sword_idle
+  rotate: false
+  xy: 2, 26
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 3
-sword_idle
-  rotate: false
-  xy: 2, 23
-  size: 48, 48
-  orig: 48, 48
-  offset: 0, 0
-  index: 1
 sword_attack
   rotate: false
-  xy: 114, 75
+  xy: 114, 78
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 2
 sword_attack
   rotate: false
-  xy: 52, 23
+  xy: 52, 26
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 3
 sword_attack
   rotate: false
-  xy: 164, 75
+  xy: 164, 78
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 4
 sword_attack
   rotate: false
-  xy: 214, 75
+  xy: 214, 78
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 5
 sword_attack
   rotate: false
-  xy: 264, 75
+  xy: 264, 78
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 6
 sword_attack
   rotate: false
-  xy: 314, 75
+  xy: 314, 78
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 7
 sword_idle
   rotate: false
-  xy: 364, 75
+  xy: 364, 78
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 2
 sword_idle
   rotate: false
-  xy: 414, 75
+  xy: 414, 78
   size: 48, 48
   orig: 48, 48
   offset: 0, 0
   index: 4
+weapon_sword_death
+  rotate: false
+  xy: 414, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 1
 tile_bricks
   rotate: false
-  xy: 170, 49
+  xy: 136, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 1
 tile_bricks
   rotate: false
-  xy: 196, 49
+  xy: 162, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 2
 tile_bricks
   rotate: false
-  xy: 222, 49
+  xy: 188, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 3
 tile_bricks
   rotate: false
-  xy: 248, 49
+  xy: 214, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 4
 tile_bricks
   rotate: false
-  xy: 274, 49
+  xy: 240, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 5
 tile_bricks
   rotate: false
-  xy: 300, 49
+  xy: 266, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 6
 tile_bricks
   rotate: false
-  xy: 326, 49
+  xy: 292, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: 7
 tile_pads
   rotate: false
-  xy: 352, 49
+  xy: 318, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
 tile_rocks
   rotate: false
-  xy: 378, 49
+  xy: 344, 2
   size: 24, 24
   orig: 24, 24
   offset: 0, 0
   index: -1
 ui_anvil
   rotate: false
-  xy: 2, 2
+  xy: 992, 107
   size: 19, 19
   split: 9, 9, 9, 9
   orig: 19, 19
@@ -294,7 +364,7 @@ ui_anvil
   index: -1
 ui_button_default
   rotate: false
-  xy: 1004, 106
+  xy: 2, 7
   size: 17, 17
   split: 8, 8, 8, 8
   orig: 17, 17
@@ -302,21 +372,21 @@ ui_button_default
   index: -1
 ui_button_pause_default
   rotate: false
-  xy: 23, 5
+  xy: 666, 26
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 ui_button_pause_pressed
   rotate: false
-  xy: 1004, 88
+  xy: 992, 89
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 ui_button_pressed
   rotate: false
-  xy: 404, 56
+  xy: 370, 9
   size: 17, 17
   split: 8, 8, 8, 8
   orig: 17, 17
@@ -324,14 +394,14 @@ ui_button_pressed
   index: -1
 ui_coin
   rotate: false
-  xy: 102, 28
+  xy: 1013, 117
   size: 9, 9
   orig: 9, 9
   offset: 0, 0
   index: -1
 ui_hpar_frame
   rotate: false
-  xy: 423, 65
+  xy: 980, 68
   size: 8, 8
   split: 6, 1, 0, 0
   orig: 8, 8
@@ -339,7 +409,7 @@ ui_hpar_frame
   index: -1
 ui_hpbar_fill
   rotate: false
-  xy: 170, 41
+  xy: 21, 18
   size: 7, 6
   split: 5, 1, 0, 0
   orig: 7, 6
@@ -347,7 +417,7 @@ ui_hpbar_fill
   index: -1
 ui_pad_blue
   rotate: false
-  xy: 404, 51
+  xy: 2, 2
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -355,7 +425,7 @@ ui_pad_blue
   index: -1
 ui_pad_green
   rotate: false
-  xy: 41, 18
+  xy: 7, 2
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -363,7 +433,7 @@ ui_pad_green
   index: -1
 ui_pad_purple
   rotate: false
-  xy: 1004, 83
+  xy: 12, 2
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -371,7 +441,7 @@ ui_pad_purple
   index: -1
 ui_pad_red
   rotate: false
-  xy: 102, 23
+  xy: 17, 2
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -379,7 +449,7 @@ ui_pad_red
   index: -1
 ui_pad_yellow
   rotate: false
-  xy: 113, 34
+  xy: 370, 4
   size: 3, 3
   split: 1, 1, 1, 1
   orig: 3, 3
@@ -387,10 +457,73 @@ ui_pad_yellow
   index: -1
 ui_sword
   rotate: false
-  xy: 2, 73
+  xy: 2, 76
   size: 110, 50
   split: 53, 56, 0, 50
   pad: 53, 56, -1, -1
   orig: 110, 50
   offset: 0, 0
   index: -1
+weapon_sword_death
+  rotate: false
+  xy: 464, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 2
+weapon_sword_death
+  rotate: false
+  xy: 514, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 3
+weapon_sword_death
+  rotate: false
+  xy: 564, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 4
+weapon_sword_death
+  rotate: false
+  xy: 614, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 5
+weapon_sword_death
+  rotate: false
+  xy: 664, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 6
+weapon_sword_death
+  rotate: false
+  xy: 714, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 7
+weapon_sword_death
+  rotate: false
+  xy: 764, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 8
+weapon_sword_death
+  rotate: false
+  xy: 814, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 9
+weapon_sword_death
+  rotate: false
+  xy: 864, 78
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: 10

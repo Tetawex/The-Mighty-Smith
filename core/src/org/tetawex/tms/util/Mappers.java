@@ -14,4 +14,5 @@ public class Mappers {
     public static ComponentMapper<TransformComponent> transform = ComponentMapper.getFor(TransformComponent.class);
     public static ComponentMapper<VelocityComponent> velocity = ComponentMapper.getFor(VelocityComponent.class);
     public static ComponentMapper<MessageComponent> message = ComponentMapper.getFor(MessageComponent.class);
+    public static ComponentMapper<DelayedRemovalComponent> delayedRemoval = ComponentMapper.getFor(DelayedRemovalComponent.class);
 }

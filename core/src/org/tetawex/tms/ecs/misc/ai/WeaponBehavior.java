@@ -39,8 +39,8 @@ public class WeaponBehavior implements Behavior {
             }
             if(targetEntity==null) {
                 setState(AIState.STATE_WALK);
-                ac.setCurrentAnimation("idle");
                 ac.setInterval(sc.getStats().getAttackInterval()/4);
+                ac.setCurrentAnimation("idle");
                 return;
             }
             else{
