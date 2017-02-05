@@ -69,8 +69,7 @@ public class AnimationComponent implements Component {
     }
     public TextureRegion render(){
         currentAnimation.setFrameDuration(interval);
-        TextureRegion frame=currentAnimation.getKeyFrame(elapsedTime,isLooping());
-        return frame;
+        return currentAnimation.getKeyFrame(elapsedTime,isLooping());
     }
     public void tick(float deltaTime) {
         if(elapsedTime<=duration)

@@ -22,6 +22,16 @@ public class RenderSystem extends SortedIteratingSystem {
         return batch;
     }
 
+    public Vector2 getViewportDimension() {
+        return viewportDimension;
+    }
+
+    public void setViewportDimension(Vector2 viewportDimension) {
+        this.viewportDimension = viewportDimension;
+    }
+
+    private Vector2 viewportDimension;
+
     private Vector2 origin=Vector2.Zero;
     public void setBatch(Batch batch) {
         this.batch = batch;
@@ -39,7 +49,7 @@ public class RenderSystem extends SortedIteratingSystem {
     protected void processEntity(Entity entity, float deltaTime) {
         RenderComponent renderComponent=rm.get(entity);
         TransformComponent transformComponent=tm.get(entity);
-
+        if(transformComponent.getPosition().x<400&&transformComponent.getPosition().x>-80)
         renderComponent.getRenderer().render(batch,origin,
                 transformComponent.getPosition(), transformComponent.getDimension());
     }

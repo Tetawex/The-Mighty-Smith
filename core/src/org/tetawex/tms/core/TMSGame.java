@@ -44,7 +44,7 @@ public class TMSGame extends Game
 	public void render ()
 	{
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		gameStateManager.getCurrentScreen().render(Gdx.graphics.getDeltaTime());
+		gameStateManager.getCurrentScreen().render(Gdx.graphics.getDeltaTime()*50);
 	}
 	@Override
 	public void resize(int width, int height) {

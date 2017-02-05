@@ -54,16 +54,15 @@ public class SkeletonBehavior implements Behavior {
                 }
             }
         }
-        else{
+        else if(tc.getPosition().x<320){
+
             ImmutableArray<Entity> entities=engine
-                    .getEntitiesFor(Family.all(TransformComponent.class,
-                            StatsComponent.class, AllyTagComponent.class).get());
+                    .getEntitiesFor(Family.all(AllyTagComponent.class).get());
             for(Entity checkedEntity : entities){
                 TransformComponent entityTransform=Mappers.transform.get(checkedEntity);
-                if(Math.abs(entityTransform.getCenterPosition().x-tc.getCenterPosition().x)
-                        <=sc.getStats().getAttackRange()&&
-                        Math.abs(entityTransform.getCenterPosition().y-tc.getCenterPosition().y)
-                        <=8) {
+                if(Math.abs(entityTransform.getCenterPosition().y-tc.getCenterPosition().y)
+                        <=8&&Math.abs(entityTransform.getCenterPosition().x-tc.getCenterPosition().x)
+                        <=sc.getStats().getAttackRange()) {
                     setState(AIState.STATE_ATTACK);
                     vc.setVelocity(new Vector2(0f,0f));
                     targetEntity=checkedEntity;

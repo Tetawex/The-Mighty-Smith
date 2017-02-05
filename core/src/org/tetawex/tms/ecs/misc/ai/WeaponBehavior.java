@@ -56,14 +56,12 @@ public class WeaponBehavior implements Behavior {
 
         else{
             ImmutableArray<Entity> entities=engine
-                    .getEntitiesFor(Family.all(TransformComponent.class,
-                            StatsComponent.class, EnemyTagComponent.class).get());
+                    .getEntitiesFor(Family.all(EnemyTagComponent.class).get());
             for(Entity checkedEntity : entities){
                 TransformComponent entityTransform=Mappers.transform.get(checkedEntity);
-                if(Math.abs(entityTransform.getCenterPosition().x-tc.getCenterPosition().x)
-                        <=sc.getStats().getAttackRange()&&
-                        Math.abs(entityTransform.getCenterPosition().y-tc.getCenterPosition().y)
-                                <=8) {
+                if(Math.abs(entityTransform.getCenterPosition().y-tc.getCenterPosition().y)
+                        <=8&&Math.abs(entityTransform.getCenterPosition().x-tc.getCenterPosition().x)
+                        <=sc.getStats().getAttackRange()){
                     setState(AIState.STATE_ATTACK);
                     targetEntity=checkedEntity;
                     return;

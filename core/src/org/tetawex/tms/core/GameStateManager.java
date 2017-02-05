@@ -33,6 +33,10 @@ public class GameStateManager
         return currentScreen;
     }
 
+    public void renderCurrentScreen(float deltaTime){
+
+    }
+
     public void setState(GameState gameState)
     {
 

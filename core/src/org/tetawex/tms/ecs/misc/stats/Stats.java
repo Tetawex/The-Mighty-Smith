@@ -108,10 +108,10 @@ public class Stats
         maxHealth=powerLevel*rawStats.getEndurancePercentage();
         currentHealth=maxHealth;
 
-        attackSpeed=0.07f*rawStats.getAgilityPercentage();
-        attackRange=8+32*rawStats.getPerceptionPercentage();
+        attackSpeed=3f*rawStats.getAgilityPercentage()+powerLevel*0.00000001f*rawStats.getAgilityPercentage();
+        attackRange=16+24*rawStats.getPerceptionPercentage();
         attackDamage=powerLevel*0.25f*rawStats.getStrengthPercentage();
-        movementSpeed=0.2f+0.3f*rawStats.getAgilityPercentage();
+        movementSpeed=5f+30f*rawStats.getAgilityPercentage()+powerLevel*0.000000001f*rawStats.getAgilityPercentage();
     }
     public Stats(float powerLevel,RawStats rawStats)
     {

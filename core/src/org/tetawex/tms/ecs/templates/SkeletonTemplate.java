@@ -30,7 +30,6 @@ public class SkeletonTemplate extends Template {
         entity.add(new VelocityComponent(Vector2.Zero));
 
         StatsComponent statsComponent=new StatsComponent(bundle.getItem("stats", Stats.class));
-        statsComponent.getStats().setMovementSpeed(statsComponent.getStats().getMovementSpeed()+random.nextFloat()/10f);
         statsComponent.getStats().setName("skeleton_basic");
 
         HashMap<String,Animation<TextureRegion>> animationHashMap=new HashMap<String, Animation<TextureRegion>>();

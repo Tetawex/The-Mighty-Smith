@@ -36,13 +36,13 @@ public class DeathTemplate extends Template {
                                 .getItem("name",String.class)+"_death"));
 
         AnimationComponent ac=new AnimationComponent(animationHashMap,
-                true,6f,"death");
+                true,0.15f,"death");
         entity.add(ac);
         entity.add(new TransformComponent(bundle.getItem("position", Vector2.class)));
         entity.add(new RenderComponent(ac.render()));
 
         Object[] o=ac.getCurrentAnimation().getKeyFrames();
-        entity.add(new DelayedRemovalComponent(6f*o.length));
+        entity.add(new DelayedRemovalComponent(0.15f*o.length));
         return entity;
     }
 }
