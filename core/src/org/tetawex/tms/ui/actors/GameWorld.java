@@ -62,10 +62,10 @@ public class GameWorld extends Widget {
             }
         }
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j <4; j++) {
+            for (int j = 0; j <3; j++) {
                 Bundle bundle=new Bundle();
                 bundle.putItem("position",new Vector2(68+j*24,12+i*24));
-                bundle.putItem("stats",new Stats(300,new RawStats(1,10,1 ,10)));
+                bundle.putItem("stats",new Stats(320,new RawStats(1,10,1 ,10)));
                 engine.addEntity(game.getTemplateManager().getTemplate("weapon_sword").createEntity(engine,bundle));
             }
         }

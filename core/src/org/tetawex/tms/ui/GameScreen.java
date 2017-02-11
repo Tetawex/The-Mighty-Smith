@@ -2,6 +2,7 @@ package org.tetawex.tms.ui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -14,7 +15,11 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.kotcrab.vis.ui.VisUI;
+import com.kotcrab.vis.ui.widget.file.FileChooser;
+import com.kotcrab.vis.ui.widget.file.FileChooserAdapter;
 import org.tetawex.tms.ui.actors.AnvilWithSword;
 import org.tetawex.tms.ui.actors.GameWorld;
 import org.tetawex.tms.core.TMSGame;
@@ -28,6 +33,7 @@ public class GameScreen implements Screen
     private TMSGame game;
 
     private Group gameGroup;
+    private Group fileDialog;
     private Group uiGroup;
 
     private GameWorld gameWorldActor;
@@ -38,9 +44,18 @@ public class GameScreen implements Screen
 
     private boolean gamePaused;
 
+    private boolean choosingFile;
+
+    private String pathToMusic;
+
     public GameScreen(TMSGame game)
     {
         this.game=game;
+
+        //VisUI.load();
+        //loadMusic();
+
+        fileDialog=new Group();
 
         Camera camera=new OrthographicCamera(320f,180f);
         camera.position.set(camera.viewportWidth/2f,camera.viewportHeight/2f,0f);
@@ -120,9 +135,23 @@ public class GameScreen implements Screen
         midRowTable.setDebug(true);
         bottomRowTable.setDebug(true);*/
     }
+
+    public void loadMusic(){
+
+
+        final FileChooser fileChooser = new FileChooser(FileChooser.Mode.OPEN);
+
+        fileChooser.setSelectionMode(FileChooser.SelectionMode.DIRECTORIES);
+        fileChooser.setListener(new FileChooserAdapter() {
+            @Override
+            public void selected (Array<FileHandle> file) {
+                pathToMusic=(file.toArray())[0].path();
+            }
+        });
+    }
+
     @Override
     public void show() {
-
     }
 
     @Override
@@ -154,7 +183,6 @@ public class GameScreen implements Screen
     public void hide() {
 
     }
-
     @Override
     public void dispose() {
 
