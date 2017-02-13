@@ -6,6 +6,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.kotcrab.vis.ui.VisUI;
 
 public class TMSGame extends Game
 {
@@ -34,6 +35,8 @@ public class TMSGame extends Game
 		assetManager.load("font.fnt", BitmapFont.class);
 		assetManager.finishLoading();
 
+		VisUI.load();
+
 		animationManager=new AnimationManager(this);
 		templateManager=new TemplateManager(this);
 		gameStateManager=new GameStateManager(this);
@@ -54,5 +57,6 @@ public class TMSGame extends Game
 	public void dispose ()
 	{
 		assetManager.dispose();
+		VisUI.dispose();
 	}
 }

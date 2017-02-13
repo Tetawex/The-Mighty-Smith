@@ -17,6 +17,9 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
 import com.kotcrab.vis.ui.widget.file.FileChooser;
 import com.kotcrab.vis.ui.widget.file.FileChooserAdapter;
@@ -30,6 +33,7 @@ import org.tetawex.tms.core.TMSGame;
 public class GameScreen implements Screen
 {
     private Stage stage;
+    private Stage pauseStage;
     private TMSGame game;
 
     private Group gameGroup;
@@ -48,26 +52,27 @@ public class GameScreen implements Screen
 
     private String pathToMusic;
 
+    //final FileChooser fileChooser = new FileChooser(FileChooser.Mode.OPEN);
+
     public GameScreen(TMSGame game)
     {
         this.game=game;
 
-        //VisUI.load();
-        //loadMusic();
-
-        fileDialog=new Group();
+        //fileDialog=new Group();
 
         Camera camera=new OrthographicCamera(320f,180f);
         camera.position.set(camera.viewportWidth/2f,camera.viewportHeight/2f,0f);
 
         stage=new Stage(new ExtendViewport(320,180,camera));
+        pauseStage=new Stage(new ExtendViewport(1280,720,camera));
         Gdx.input.setInputProcessor(stage);
+
+        pauseStage.addActor(pauseGroup);
 
         gameGroup=new Group();
         stage.addActor(gameGroup);
 
         pauseGroup=new Group();
-        stage.addActor(pauseGroup);
 
         uiGroup=new Group();
         gameGroup.addActor(uiGroup);
@@ -106,7 +111,7 @@ public class GameScreen implements Screen
         pauseButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                gamePaused=true;
+                setGamePaused(!gamePaused);
             }
         });
         topRowLeftTable.add(pauseButton).size(16,16);
@@ -127,6 +132,8 @@ public class GameScreen implements Screen
         midRowTable.add(gameWorldActor).expand();
         midRowTable.toBack();
 
+        pauseGroup.addActor(new TextButton("",textButtonStyle));
+
         //debug
         /*mainTable.setDebug(true);
         topRowTable.setDebug(true);
@@ -136,19 +143,29 @@ public class GameScreen implements Screen
         bottomRowTable.setDebug(true);*/
     }
 
-    public void loadMusic(){
+    public void setGamePaused(boolean gamePaused) {
+        this.gamePaused = gamePaused;
+    }
+    public void setChoosingFile(boolean choosingFile) {
+        this.choosingFile = choosingFile;
+        if(choosingFile)
+            Gdx.input.setInputProcessor(pauseStage);
+        else
+            Gdx.input.setInputProcessor(stage);
+    }
+    /*public void loadMusic(){
 
-
-        final FileChooser fileChooser = new FileChooser(FileChooser.Mode.OPEN);
+        setChoosingFile(true);
 
         fileChooser.setSelectionMode(FileChooser.SelectionMode.DIRECTORIES);
         fileChooser.setListener(new FileChooserAdapter() {
             @Override
             public void selected (Array<FileHandle> file) {
                 pathToMusic=(file.toArray())[0].path();
+                setChoosingFile(false);
             }
         });
-    }
+    }*/
 
     @Override
     public void show() {
@@ -156,16 +173,25 @@ public class GameScreen implements Screen
 
     @Override
     public void render(float delta) {
-        stage.act(delta);
-        stage.draw();
-
-
+        if(gamePaused)
+            stage.act(delta);
+            stage.draw();
+        /*if(!choosingFile) {
+            stage.act(delta);
+            stage.draw();
+        }
+        else{
+            pauseStage.act(delta);
+            pauseStage.draw();
+        }*/
     }
 
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width,height,true);
         stage.getViewport().getCamera().update();
+        pauseStage.getViewport().update(width,height,true);
+        pauseStage.getViewport().getCamera().update();
 
     }
 

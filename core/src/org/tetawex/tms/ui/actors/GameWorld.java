@@ -30,7 +30,7 @@ public class GameWorld extends Widget {
     private RenderSystem renderSystem;
 
     //for testing purposes
-    BitmapFont font = new BitmapFont();
+    //BitmapFont font = new BitmapFont();
     FPSLogger fpsLogger=new FPSLogger();
 
     public GameWorld(TMSGame game){
@@ -86,7 +86,7 @@ public class GameWorld extends Widget {
         renderSystem.setBatch(batch);
         renderSystem.setOrigin(new Vector2(getX(),getY()));
         engine.update(Gdx.graphics.getDeltaTime());
-        fpsLogger.log();
+        //fpsLogger.log();
     }
     @Override
     public void act(float deltaTime){
