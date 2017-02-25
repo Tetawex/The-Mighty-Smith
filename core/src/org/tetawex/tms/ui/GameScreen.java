@@ -2,6 +2,7 @@ package org.tetawex.tms.ui;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -24,6 +25,8 @@ import com.kotcrab.vis.ui.VisUI;
 import com.kotcrab.vis.ui.widget.file.FileChooser;
 import com.kotcrab.vis.ui.widget.file.FileChooserAdapter;
 import org.tetawex.tms.ui.actors.AnvilWithSword;
+import org.tetawex.tms.ui.actors.Beat;
+import org.tetawex.tms.ui.actors.BeatTracker;
 import org.tetawex.tms.ui.actors.GameWorld;
 import org.tetawex.tms.core.TMSGame;
 
@@ -52,6 +55,8 @@ public class GameScreen implements Screen
 
     private String pathToMusic;
 
+    private BeatTracker tracker;
+
     //final FileChooser fileChooser = new FileChooser(FileChooser.Mode.OPEN);
 
     public GameScreen(TMSGame game)
@@ -64,15 +69,14 @@ public class GameScreen implements Screen
         camera.position.set(camera.viewportWidth/2f,camera.viewportHeight/2f,0f);
 
         stage=new Stage(new ExtendViewport(320,180,camera));
-        pauseStage=new Stage(new ExtendViewport(1280,720,camera));
+        pauseStage=new Stage(new ExtendViewport(320,180,camera));
         Gdx.input.setInputProcessor(stage);
-
-        pauseStage.addActor(pauseGroup);
 
         gameGroup=new Group();
         stage.addActor(gameGroup);
 
         pauseGroup=new Group();
+        pauseStage.addActor(pauseGroup);
 
         uiGroup=new Group();
         gameGroup.addActor(uiGroup);
@@ -100,7 +104,7 @@ public class GameScreen implements Screen
         mainTable.setFillParent(true);
         mainTable.add(topRowTable).expandX().prefHeight(41f).left().row();
         mainTable.add(midRowTable).expandX().expandY().row();
-        mainTable.add(bottomRowTable).expandX().prefHeight(56f);
+        mainTable.add(bottomRowTable).expandX().prefHeight(50f);
 
         Table topRowLeftTable=new Table();
         Table topRowRightTable=new Table();
@@ -125,9 +129,35 @@ public class GameScreen implements Screen
         patch = skin.getPatch("ui_sword");
         NinePatchDrawable ninePatchSword = new NinePatchDrawable(patch);
 
+        Beat[] beats=new Beat[4];
+        beats[0]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
+                game.getAnimationManager().getAnimation("beat_red_charge"),
+                game.getAnimationManager().getAnimation("beat_red_click"));
+        beats[1]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
+                game.getAnimationManager().getAnimation("beat_red_charge"),
+                game.getAnimationManager().getAnimation("beat_red_click"));
+        beats[2]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
+                game.getAnimationManager().getAnimation("beat_red_charge"),
+                game.getAnimationManager().getAnimation("beat_red_click"));
+        beats[3]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
+                game.getAnimationManager().getAnimation("beat_red_charge"),
+                game.getAnimationManager().getAnimation("beat_red_click"));
+        //Refactor ASAP!!!
+        Music menuMusic = Gdx.audio.newMusic(Gdx.files.internal("music/game_main.ogg"));
+        menuMusic.setLooping(true);
+        menuMusic.play();
+        gameGroup.addActor(new BeatTracker(beats,0.5f));
         anvilWithSword=new AnvilWithSword(ninePatchAnvil,ninePatchSword);
+        Stack bottomStack=new Stack();
+        Table beatsTable=new Table();
+        for (int i = 0; i < beats.length; i++) {
+            beatsTable.add(beats[i]).expand();
+        }
 
-        bottomRowTable.add(anvilWithSword);
+        bottomStack.addActor(anvilWithSword);
+        bottomStack.addActor(beatsTable);
+
+        bottomRowTable.add(bottomStack).expand();
         gameWorldActor=new GameWorld(game);
         midRowTable.add(gameWorldActor).expand();
         midRowTable.toBack();
@@ -173,8 +203,7 @@ public class GameScreen implements Screen
 
     @Override
     public void render(float delta) {
-        if(gamePaused)
-            stage.act(delta);
+            stage.act(Gdx.graphics.getDeltaTime());
             stage.draw();
         /*if(!choosingFile) {
             stage.act(delta);

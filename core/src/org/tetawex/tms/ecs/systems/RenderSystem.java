@@ -49,7 +49,6 @@ public class RenderSystem extends SortedIteratingSystem {
     protected void processEntity(Entity entity, float deltaTime) {
         RenderComponent renderComponent=rm.get(entity);
         TransformComponent transformComponent=tm.get(entity);
-        if(transformComponent.getPosition().x<400&&transformComponent.getPosition().x>-80)
         renderComponent.getRenderer().render(batch,origin,
                 transformComponent.getPosition(), transformComponent.getDimension());
     }

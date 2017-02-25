@@ -65,7 +65,9 @@ public class RawStats
         this.endurance = endurance;
         this.perception = perception;
     }
-
+    public RawStats() {
+        this(1,1,1,1);
+    }
     private float strength;
     private float agility;
     private float endurance;

@@ -2,6 +2,7 @@ package org.tetawex.tms.ui.actors;
 
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.Widget;
 import com.badlogic.gdx.scenes.scene2d.utils.NinePatchDrawable;
 
@@ -15,7 +16,6 @@ public class AnvilWithSword extends Widget {
     public AnvilWithSword(NinePatchDrawable anvilDrawable, NinePatchDrawable swordDrawable){
         this.anvilDrawable =anvilDrawable;
         this.swordDrawable =swordDrawable;
-
         setTouchable(Touchable.disabled);
     }
     @Override
@@ -35,5 +35,6 @@ public class AnvilWithSword extends Widget {
     @Override
     public void act(float delta) {
         super.act(delta);
+
     }
 }

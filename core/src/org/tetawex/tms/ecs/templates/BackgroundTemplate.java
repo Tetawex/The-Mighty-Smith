@@ -55,9 +55,9 @@ public class BackgroundTemplate extends Template {
 
         entity.add(new TransformComponent(
                 bundle.getItem("position", Vector2.class),
-                new Vector2(15*24,10*24)));
+                new Vector2(15*24,12*24)));
 
-        int[][] tileMap=new int[15][10];
+        int[][] tileMap=new int[15][12];
 
 
         for (int i = 0; i < 15; i++){
