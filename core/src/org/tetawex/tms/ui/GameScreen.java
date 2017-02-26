@@ -3,6 +3,7 @@ package org.tetawex.tms.ui;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -29,6 +30,7 @@ import org.tetawex.tms.ui.actors.Beat;
 import org.tetawex.tms.ui.actors.BeatTracker;
 import org.tetawex.tms.ui.actors.GameWorld;
 import org.tetawex.tms.core.TMSGame;
+import org.tetawex.tms.util.BeatFactory;
 
 /**
  * Created by Tetawex on 08.01.2017.
@@ -130,23 +132,14 @@ public class GameScreen implements Screen
         NinePatchDrawable ninePatchSword = new NinePatchDrawable(patch);
 
         Beat[] beats=new Beat[4];
-        beats[0]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
-                game.getAnimationManager().getAnimation("beat_red_charge"),
-                game.getAnimationManager().getAnimation("beat_red_click"));
-        beats[1]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
-                game.getAnimationManager().getAnimation("beat_red_charge"),
-                game.getAnimationManager().getAnimation("beat_red_click"));
-        beats[2]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
-                game.getAnimationManager().getAnimation("beat_red_charge"),
-                game.getAnimationManager().getAnimation("beat_red_click"));
-        beats[3]=new Beat(game.getAnimationManager().getAnimation("beat_red_idle"),
-                game.getAnimationManager().getAnimation("beat_red_charge"),
-                game.getAnimationManager().getAnimation("beat_red_click"));
+        for (int i = 0; i <beats.length ; i++) {
+            beats[i]= BeatFactory.generateBeat(game);
+        }
         //Refactor ASAP!!!
         Music menuMusic = Gdx.audio.newMusic(Gdx.files.internal("music/game_main.ogg"));
         menuMusic.setLooping(true);
         menuMusic.play();
-        gameGroup.addActor(new BeatTracker(beats,0.5f));
+        gameGroup.addActor(new BeatTracker(beats,100));
         anvilWithSword=new AnvilWithSword(ninePatchAnvil,ninePatchSword);
         Stack bottomStack=new Stack();
         Table beatsTable=new Table();

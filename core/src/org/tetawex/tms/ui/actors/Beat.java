@@ -1,12 +1,14 @@
 package org.tetawex.tms.ui.actors;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Widget;
+import org.tetawex.tms.util.StatToIntConverter;
 import org.tetawex.tms.util.StatType;
 
 import java.util.LinkedList;
@@ -20,27 +22,48 @@ public class Beat extends Widget {
         void onBeatHit(StatType statType);
     }
     private StatType statType;
+    private int statNum;
 
     private Queue<BeatListener> listeners;
 
     private float beatInterval;
     private float elapsedTime=0.1f;
 
+    public boolean isCharging() {
+        return charging;
+    }
+
     private boolean charging;
+
+    private Sound clickSound;
 
     private Animation<TextureRegion> currentAnimation;
     private Animation<TextureRegion> idleAnimation;
-    private Animation<TextureRegion> chargeAnimation;
-    private Animation<TextureRegion> clickAnimation;
+    private Animation<TextureRegion>[] chargeAnimations;
+    private Animation<TextureRegion>[] clickAnimations;
+    private Animation<TextureRegion> failAnimation;
 
-    public Beat(Animation<TextureRegion> idleAnimation,
-                Animation<TextureRegion> chargeAnimation,
-                Animation<TextureRegion> clickAnimation){
+    public Beat(Sound clickSound, Animation<TextureRegion> idleAnimation,
+                Animation<TextureRegion>[] chargeAnimations,
+                Animation<TextureRegion>[] clickAnimations,
+                Animation<TextureRegion> failAnimation){
         listeners=new LinkedList<BeatListener>();
 
+        this.clickSound=clickSound;
+
         this.idleAnimation=idleAnimation;
-        this.chargeAnimation=chargeAnimation;
-        this.clickAnimation=clickAnimation;
+        this.chargeAnimations=chargeAnimations;
+        this.clickAnimations=clickAnimations;
+        this.failAnimation=failAnimation;
+        for (int i = 0; i < this.clickAnimations.length; i++) {
+            this.clickAnimations[i].setFrameDuration(0.05f);
+            this.clickAnimations[i].setPlayMode(Animation.PlayMode.NORMAL);
+            this.chargeAnimations[i].setPlayMode(Animation.PlayMode.NORMAL);
+        }
+        idleAnimation.setFrameDuration(10f);
+        failAnimation.setFrameDuration(3f);
+        idleAnimation.setPlayMode(Animation.PlayMode.NORMAL);
+        failAnimation.setPlayMode(Animation.PlayMode.NORMAL);
 
         currentAnimation=idleAnimation;
         //great costil
@@ -52,24 +75,31 @@ public class Beat extends Widget {
             }
         });
     }
-    public void click(){
-        notifyListenersSuccess();
-        currentAnimation=clickAnimation;
+    public void respondOnClick(boolean success){
+        if(success)
+            currentAnimation=clickAnimations[statNum];
+        else
+            currentAnimation=failAnimation;
     }
-    public void charge(float beatInterval, StatType statType){
+    public void click(){
+
+        clickSound.play();
+
+        notifyListenersSuccess();
+    }
+    public void charge(float beatInterval, int statNum){
         this.charging=true;
         elapsedTime=0;
         this.beatInterval=beatInterval;
-        this.statType=statType;
-        currentAnimation=chargeAnimation;
-        chargeAnimation.setPlayMode(Animation.PlayMode.LOOP);
-        Object[] cock=chargeAnimation.getKeyFrames();
-        chargeAnimation.setFrameDuration(0.6f*beatInterval/cock.length);
+        this.statNum=statNum;
+        currentAnimation=chargeAnimations[statNum];
+        //Object[] anim=chargeAnimation[statNum].getKeyFrames();
+        chargeAnimations[statNum].setFrameDuration( beatInterval/13f);
     }
     public void discharge(){
         elapsedTime=0f;
-        charging=false;
         currentAnimation=idleAnimation;
+        charging=false;
     }
     @Override
     public void act(float deltaTime){
@@ -80,11 +110,11 @@ public class Beat extends Widget {
         batch.draw(currentAnimation.getKeyFrame(elapsedTime),getX(),getY());
     }
     public float getPrefWidth() {
-        return 48;
+        return 80;
     }
     @Override
     public float getPrefHeight() {
-        return 32;
+        return 50;
     }
     public void addBeatListener(BeatListener beatListener){
         listeners.add(beatListener);

@@ -15,7 +15,7 @@ public class AnvilWithSword extends Widget {
 
     public AnvilWithSword(NinePatchDrawable anvilDrawable, NinePatchDrawable swordDrawable){
         this.anvilDrawable =anvilDrawable;
-        this.swordDrawable =swordDrawable;
+        this.swordDrawable =swordDrawable;   
         setTouchable(Touchable.disabled);
     }
     @Override
@@ -30,7 +30,7 @@ public class AnvilWithSword extends Widget {
     public void draw(Batch batch, float parentAlpha) {
         //anvilDrawable.draw(batch, getX() + (getWidth() - getWidth() / 1.6f) / 2, getY(), getWidth() / 1.6f, getHeight());
         anvilDrawable.draw(batch, getX(), getY(), getPrefWidth(), getPrefHeight());
-        swordDrawable.draw(batch, getX(), getY(), getPrefWidth(), getPrefHeight());
+        swordDrawable.draw(batch, getX()-32, getY(), getPrefWidth()+32, getPrefHeight());
     }
     @Override
     public void act(float delta) {

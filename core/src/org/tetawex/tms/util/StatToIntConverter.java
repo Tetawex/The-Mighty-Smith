@@ -10,7 +10,7 @@ public class StatToIntConverter {
                 return 0;
             case AGILITY:
                 return 1;
-            case DURABILITY:
+            case ENDURANCE:
                 return 2;
             default:
                 return 3;
@@ -23,7 +23,7 @@ public class StatToIntConverter {
             case 1:
                 return StatType.AGILITY;
             case 2:
-                return StatType.DURABILITY;
+                return StatType.ENDURANCE;
             default:
                 return StatType.PERCEPTION;
         }

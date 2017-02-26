@@ -3,6 +3,7 @@ package org.tetawex.tms.core;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -33,6 +34,8 @@ public class TMSGame extends Game
 		assetManager=new AssetManager();
 		assetManager.load("atlas.atlas", TextureAtlas.class);
 		assetManager.load("font.fnt", BitmapFont.class);
+
+		assetManager.load("sounds/anvil.ogg", Sound.class);
 		assetManager.finishLoading();
 
 		VisUI.load();
