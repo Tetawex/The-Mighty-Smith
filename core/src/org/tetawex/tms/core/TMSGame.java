@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.kotcrab.vis.ui.VisUI;
+import org.tetawex.tms.util.MusicPlayer;
 
 public class TMSGame extends Game
 {
@@ -15,6 +16,12 @@ public class TMSGame extends Game
 	private AnimationManager animationManager;
 	private AssetManager assetManager;
 	private TemplateManager templateManager;
+
+    public MusicPlayer getMusicPlayer() {
+        return musicPlayer;
+    }
+
+    private MusicPlayer musicPlayer;
 
 	public TemplateManager getTemplateManager() {
 		return templateManager;
@@ -36,6 +43,7 @@ public class TMSGame extends Game
 		assetManager.load("font.fnt", BitmapFont.class);
 
 		assetManager.load("sounds/anvil.ogg", Sound.class);
+		assetManager.load("music/game_main.ogg", Sound.class);
 		assetManager.finishLoading();
 
 		VisUI.load();
@@ -43,6 +51,7 @@ public class TMSGame extends Game
 		animationManager=new AnimationManager(this);
 		templateManager=new TemplateManager(this);
 		gameStateManager=new GameStateManager(this);
+		musicPlayer=new MusicPlayer();
 
 	}
 

@@ -83,7 +83,7 @@ public class Beat extends Widget {
     }
     public void click(){
 
-        clickSound.play();
+        //clickSound.play();
 
         notifyListenersSuccess();
     }
@@ -118,6 +118,10 @@ public class Beat extends Widget {
     }
     public void addBeatListener(BeatListener beatListener){
         listeners.add(beatListener);
+    }
+
+    public int getStatNum() {
+        return statNum;
     }
 
     private void notifyListenersSuccess(){

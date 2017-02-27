@@ -25,12 +25,14 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.kotcrab.vis.ui.VisUI;
 import com.kotcrab.vis.ui.widget.file.FileChooser;
 import com.kotcrab.vis.ui.widget.file.FileChooserAdapter;
+import org.tetawex.tms.ecs.misc.stats.RawStats;
 import org.tetawex.tms.ui.actors.AnvilWithSword;
 import org.tetawex.tms.ui.actors.Beat;
 import org.tetawex.tms.ui.actors.BeatTracker;
 import org.tetawex.tms.ui.actors.GameWorld;
 import org.tetawex.tms.core.TMSGame;
 import org.tetawex.tms.util.BeatFactory;
+import org.tetawex.tms.util.MusicPlayer;
 
 /**
  * Created by Tetawex on 08.01.2017.
@@ -94,7 +96,7 @@ public class GameScreen implements Screen
         textButtonStyle.up = skin.getDrawable("ui_button_pause_default");
         textButtonStyle.down = skin.getDrawable("ui_button_pause_pressed");
 
-
+        gameWorldActor=new GameWorld(game);
 
         Table mainTable=new Table();
         stage.addActor(mainTable);
@@ -135,11 +137,29 @@ public class GameScreen implements Screen
         for (int i = 0; i <beats.length ; i++) {
             beats[i]= BeatFactory.generateBeat(game);
         }
+        final BeatTracker beatTracker=new BeatTracker(beats,100);
         //Refactor ASAP!!!
         Music menuMusic = Gdx.audio.newMusic(Gdx.files.internal("music/game_main.ogg"));
-        menuMusic.setLooping(true);
-        menuMusic.play();
-        gameGroup.addActor(new BeatTracker(beats,100));
+        game.getMusicPlayer().loop(menuMusic);
+        game.getMusicPlayer().addMusicResetListener(new MusicPlayer.MusicResetListener() {
+            @Override
+            public void musicReset() {
+                beatTracker.reset(0);
+            }
+        });
+        gameWorldActor.addWeaponPlacedListener(new GameWorld.WeaponPlacedListener() {
+            @Override
+            public void weaponPlaced() {
+                beatTracker.setActive(true);
+            }
+        });
+        beatTracker.addWeaponForgedlistener(new BeatTracker.WeaponForgedListener() {
+            @Override
+            public void onWeaponForged(RawStats rawStats, float powerLevel) {
+                gameWorldActor.onWeaponForged(rawStats,powerLevel);
+            }
+        });
+        gameGroup.addActor(beatTracker);
         anvilWithSword=new AnvilWithSword(ninePatchAnvil,ninePatchSword);
         Stack bottomStack=new Stack();
         Table beatsTable=new Table();
@@ -151,7 +171,6 @@ public class GameScreen implements Screen
         bottomStack.addActor(beatsTable);
 
         bottomRowTable.add(bottomStack).expand();
-        gameWorldActor=new GameWorld(game);
         midRowTable.add(gameWorldActor).expand();
         midRowTable.toBack();
 

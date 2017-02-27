@@ -68,6 +68,38 @@ public class RawStats
     public RawStats() {
         this(1,1,1,1);
     }
+    public void increaseStat(int statNum,float amount){
+        switch (statNum){
+            case 0:
+                strength+=amount;
+                break;
+            case 1:
+                agility+=amount;
+                break;
+            case 2:
+                endurance+=amount;
+                break;
+            default:
+                perception+=amount;
+                break;
+        }
+    }
+    public void decrementStats(){
+        if(strength>1)
+            strength-=1;
+        if(agility>1)
+            agility-=1;
+        if(endurance>1)
+            endurance-=1;
+        if(perception>1)
+            perception-=1;
+    }
+    public void resetStats(){
+        strength=1;
+        agility=1;
+        endurance=1;
+        perception=1;
+    }
     private float strength;
     private float agility;
     private float endurance;

@@ -25,6 +25,15 @@ public class BeatTracker extends Actor {
     private Random random=new Random();
     FPSLogger fps=new FPSLogger();
 
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    private boolean active;
     private float elapsedTime;
     private float beatInterval;
 
@@ -32,7 +41,7 @@ public class BeatTracker extends Actor {
     private int beatsHit=0;
 
     private float powerLevel=1;
-    private float powerLevelMultiplier=1;
+    private float powerLevelMultiplier=10;
 
     private boolean beatHit=false;
     private boolean beatsCharging;
@@ -40,8 +49,9 @@ public class BeatTracker extends Actor {
     private RawStats weaponStats=null;
 
     public BeatTracker(Beat[] beats,float beatsPerMinute){
+        active =true;
         this.beats=beats;
-        this.beatInterval=60/(beatsPerMinute);
+        this.beatInterval=60f/(beatsPerMinute);
         this.weaponStats=new RawStats();
 
         for (final Beat beat:beats) {
@@ -52,24 +62,39 @@ public class BeatTracker extends Actor {
                     if(!beatHit&&beat.isCharging()) {
                         beatHit = true;
                         powerLevel++;
-                        powerLevelMultiplier+=0.01f;
+                        powerLevelMultiplier+=0.1f;
+                        weaponStats.increaseStat(beat.getStatNum(),1);
                         dischargeBeats();
                         beat.respondOnClick(true);
                     }
                     else{
-                        powerLevelMultiplier-=0.01f;
+                        powerLevelMultiplier-=0.1f;
                         powerLevel--;
+                        weaponStats.decrementStats();
                         beat.respondOnClick(false);
+                    }
+                    if(powerLevel>beatsToForge)
+                    {
+                        setActive(false);
+                        powerLevel=1;
+
+                        weaponForged();
+                        weaponStats=new RawStats();
                     }
                 }
             });
         }
     }
+    public void reset(float delay){
+        elapsedTime=-delay;
+        dischargeBeats();
+    }
     public RawStats getWeaponRawStats(){
         return weaponStats;
     }
     public void act(float deltaTime){
-        elapsedTime+=deltaTime;
+        if(active)
+            elapsedTime+=deltaTime;
         if(elapsedTime>=beatInterval*1.4f){
             elapsedTime-=beatInterval;
             beatsCharging=false;
@@ -89,7 +114,6 @@ public class BeatTracker extends Actor {
         }
     }
     private void chargeBeats(){
-        fps.log();
         int limit=2+random.nextInt(2);
         for (int i=0;i<limit;i++) {
             tempBeatArray[i]=true;
@@ -118,7 +142,7 @@ public class BeatTracker extends Actor {
     // Implementing Fisher–Yates shuffle
     private boolean[] tempBeatArray=new boolean[4];
     private int[] tempStatArray=new int[]{0,1,2,3};
-    public void shuffleBooleanArray(boolean[] ar) {
+    private void shuffleBooleanArray(boolean[] ar) {
         for (int i = ar.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             // Simple swap
@@ -127,7 +151,7 @@ public class BeatTracker extends Actor {
             ar[i] = a;
         }
     }
-    public void shuffleIntegerArray(int[] ar) {
+    private void shuffleIntegerArray(int[] ar) {
         for (int i = ar.length - 1; i > 0; i--) {
             int index = random.nextInt(i + 1);
             // Simple swap
